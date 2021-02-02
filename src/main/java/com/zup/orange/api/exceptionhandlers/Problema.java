@@ -19,7 +19,6 @@ public class Problema {
 		private String mensagem;
 		
 		
-		
 		public Campo(String nome, String mensagem) {
 			super();
 			this.nome = nome;

@@ -20,7 +20,7 @@ import com.zup.orange.domain.exception.DomainException;
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler{
 	
 	@ExceptionHandler(DomainException.class)
-	public ResponseEntity<Object> handleNegocio(DomainException ex, WebRequest request) {
+	public ResponseEntity<Object> handleNegocio(DomainException ex, WebRequest request){
 		var status = HttpStatus.BAD_REQUEST;
 		
 		var problema = new Problema();
