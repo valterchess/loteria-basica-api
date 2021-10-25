@@ -72,17 +72,18 @@ Apenas adicionei um método:
 
 Após criar o ClienteRepository, iniciei aconfiguração do aplication.properties, coisas simples criar banco de dados se não existir, nome do usuário e senha. 
 
-spring.datasource.url=jdbc:mysql://localhost/orange_db?createDatabaseIfNotExist=true&serverTimezone=UTC
-spring.datasource.data-username="nome"
-spring.datasource.data-password="5enH4"
+	• spring.datasource.url=jdbc:mysql://localhost/orange_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+	• spring.datasource.data-username="nome"
+	• spring.datasource.data-password="5enH4"
+	
 (Obs.: Acabei cometendo um pequeno deslise aqui, mas vou explicar em seguida.)
 
 Seguidamente (Ainda sem iniciar a Aplicação nenhuma vez), através do /DB/Migration criei o arquivo de migração da tabela cliente.
 Então iniciei a Aplicação, e Obviamente, como havia comentado houve um erro. Pois Na criação do banco o comando correto, no meu caso, para usuário e senha não deveria conter o data o correto deveria ser assim:
 
-spring.datasource.url=jdbc:mysql://localhost/orange_db?createDatabaseIfNotExist=true&serverTimezone=UTC
-spring.datasource.username=”nome”
-spring.datasource.password=”5enH4”
+	• spring.datasource.url=jdbc:mysql://localhost/orange_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+	• spring.datasource.username=”nome”
+	• spring.datasource.password=”5enH4”
 
 Após essa correção a execução ocorreu normalmente.
 
@@ -95,13 +96,13 @@ A verificação do e-mail auxilia também na atualização dos dados.
 Na classe ClienteController, fiz os métodos básicos de cadastro, atualização e de Consulta.
 listarClientes(): que retorna uma lista de clientes com a facilidade do findAll() do JpaRepository.
 
-buscar(): Que retorna um cliente especifico, e recebe como parâmetro o Id. E retorna um 404, se o cliente informado não existir.
+• buscar(): Que retorna um cliente especifico, e recebe como parâmetro o Id. E retorna um 404, se o cliente informado não existir.
 
-adicionar(): Adiciona um novo cliente seguindo as regras do método da classe CadastroClienteService. Retorna o Status HTTP 201.
+• adicionar(): Adiciona um novo cliente seguindo as regras do método da classe CadastroClienteService. Retorna o Status HTTP 201.
 
-atualizar(): Atualiza um cliente recebendo como parâmetro o id, e verifica se o cliente existe no banco, caso o cliente não exista retorna um erro 404.
+• atualizar(): Atualiza um cliente recebendo como parâmetro o id, e verifica se o cliente existe no banco, caso o cliente não exista retorna um erro 404.
   
-delete(): Exclui um cliente seguindo o método do CadastroClienteService. Se o cliente existir, faz a exclusão e retorna como Status o 204, e se por acaso o cliente não exista retorna um 404.
+• delete(): Exclui um cliente seguindo o método do CadastroClienteService. Se o cliente existir, faz a exclusão e retorna como Status o 204, e se por acaso o cliente não exista retorna um 404.
 
 
 # Tratamento de Exceptions:
