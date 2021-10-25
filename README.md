@@ -71,19 +71,19 @@ Apenas adicionei um método:
 # Configurando Integração com MySQL:
 
 Após criar o ClienteRepository, iniciei aconfiguração do aplication.properties, coisas simples criar banco de dados se não existir, nome do usuário e senha. 
----------------------------------------------------------------------------------------------------------
-|spring.datasource.url=jdbc:mysql://localhost/orange_db?createDatabaseIfNotExist=true&serverTimezone=UTC|
-|spring.datasource.data-username="nome"                                                                 |
-|spring.datasource.data-password="5enH4"                                                                |
-|(Obs.: Acabei cometendo um pequeno deslise aqui, mas vou explicar em seguida.)                         |
----------------------------------------------------------------------------------------------------------
+
+spring.datasource.url=jdbc:mysql://localhost/orange_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+spring.datasource.data-username="nome"
+spring.datasource.data-password="5enH4"
+(Obs.: Acabei cometendo um pequeno deslise aqui, mas vou explicar em seguida.)
+
 Seguidamente (Ainda sem iniciar a Aplicação nenhuma vez), através do /DB/Migration criei o arquivo de migração da tabela cliente.
 Então iniciei a Aplicação, e Obviamente, como havia comentado houve um erro. Pois Na criação do banco o comando correto, no meu caso, para usuário e senha não deveria conter o data o correto deveria ser assim:
----------------------------------------------------------------------------------------------------------
-|spring.datasource.url=jdbc:mysql://localhost/orange_db?createDatabaseIfNotExist=true&serverTimezone=UTC|
-|spring.datasource.username=”nome”                                                                      |
-|spring.datasource.password=”5enH4”                                                                     |
----------------------------------------------------------------------------------------------------------
+
+spring.datasource.url=jdbc:mysql://localhost/orange_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+spring.datasource.username=”nome”
+spring.datasource.password=”5enH4”
+
 Após essa correção a execução ocorreu normalmente.
 
 # Service: crud de Cliente;
