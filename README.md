@@ -151,7 +151,7 @@ Passei então uma verificação, onde dado a ausência do cliente deveria retorn
   Após isso, apliquei ela na classe ApiExceptionHandler através do método handleNegocio, organizando a resposta com um objeto do tipo problema e retornando uma handleExceptionInternal().
 
 	@ExceptionHandler(DomainException.class)
-	public ResponseEntity<Object> handleNegocio(DomainException ex,            WebRequest request){
+	public ResponseEntity<Object> handleNegocio(DomainException ex,WebRequest request){
 		var status = HttpStatus.BAD_REQUEST;
 		
 		var problema = new Problema();
